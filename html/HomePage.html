@@ -341,7 +341,7 @@
 
         .column1 {
             float: left;
-            width: 30%;
+            width: 32.5%;
 
         }
 
@@ -363,7 +363,7 @@
         .socialbtns .fa {
             width: 42px;
             height: 42px;
-            color: #FFF;
+
             background-color: #ac2925;
             padding-top: 12px;
             transition: all ease 0.5s;
@@ -383,7 +383,58 @@
             -o-transition: all ease 0.5s;
         }
 
+        .socialbtns .fa:hover {
+            border-radius: 5px;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -o-border-radius: 20px;
+            transition: all ease 0.5s;
+            -moz-transition: all ease 0.5s;
+            -webkit-transition: all ease 0.5s;
+            -o-transition: all ease 0.5s;
+        }
 
+        .search-div .search-form .form-control {
+            width: 33%;
+            margin-left: 323px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .search-butt {
+            margin-left: 60px;
+            width: 10%;
+            height: 35px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .search-butt1 {
+            margin-left: 13px;
+            width: 10%;
+            height: 35px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+        }
+
+        .search-butt2 {
+            margin-left: -53px;
+            width: 10%;
+            height: 35px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .dropdown_buut {
+            width: 60%;
+            height: 36px;
+        }
+
+        .btn-danger {
+            color: #fff;
+            background-color: #ac2925 !important;
+            border-color: #ac2925 !important;
+        }
 
     </style>
 
@@ -449,7 +500,46 @@
             </h2>
         </div>
 
-        <div class="col-md-10" style="text-align: center ; margin-left: 11.5%">
+
+        <div class="search-div">
+            <form action="" class="search-form">
+                <input type="text" class="form-control column1" placeholder="Search">
+                <button type="submit" class="btn btn-danger column1 search-butt" value="Search">Search</button>
+                <div class="dropdown column1 search-butt1">
+                    <button class="btn btn-danger dropdown-toggle dropdown_buut "
+                            style="background-color: #ac2925!important;" type="button" data-toggle="dropdown">Cost
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <form>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" checked>Descending</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio">Ascending</label>
+                            </div>
+                        </form>
+                    </ul>
+                </div>
+                <div class="dropdown column1 search-butt2">
+                    <button class="btn btn-danger dropdown-toggle dropdown_buut "
+                            style="background-color: #ac2925!important;" type="button" data-toggle="dropdown">Year
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <form>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" checked>Descending</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio">Ascending</label>
+                            </div>
+                        </form>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="col-lg-9" style="text-align: center ; margin-left: 11.5%">
             <div class="column1">
                 <h4 class="Amazon">Hassle free</h4>
                 <p style=" font-size: 10px">Signup for free with no monthly or annual fees.<br> No more lines or
@@ -466,7 +556,6 @@
         </div>
         <div class="w3-content" style="max-width:1100px; margin-left: 17% ; text-align: center">
             <div class="w3-row-padding">
-
                 <div class="w3-half w3-margin-bottom column1">
                     <img src="../img/6572131-tehran-wallpapers.jpg" alt="Norway" style="width:100%">
                     <div class="w3-container w3-white">
@@ -476,7 +565,6 @@
                         <button class="w3-button w3-margin-bottom">Book</button>
                     </div>
                 </div>
-
 
                 <div class="w3-half w3-margin-bottom column1">
                     <img src="../img/6572131-tehran-wallpapers.jpg" alt="Austria" style="width:100%">
