@@ -80,3 +80,38 @@ $(".previous").click(function(){
 $(".submit").click(function(){
 	return false;
 })
+
+$("#myNext").click(function () {
+    // var name = $("input[name=name]").val();
+    // var family = $("input[name=family]").val();
+    // var idNum = $("input[name=IdNumber]").val();
+    // var gender = $("input[name=gender]").val();
+    // var birthday = $("input[name=birthday]").val();
+    // var mobileNum = $("input[name=mobileNumber]").val();
+    // var phoneNum = $("input[name=phoneNumber]").val();
+    // var username = $("input[name=username]").val();
+    // var email = $("input[name=email]").val();
+    // var password = $("input[name=pass]").val();
+    // var cpassword = $("input[name=cpass]").val();
+    // var code = $("input[name=emailCode]").val();
+    // var person = {name : name, family : family, identificationId : idNum , gender : gender , birthday : birthday , mobileNum : mobileNum,
+    //     phoneNum : phoneNum , username : username , email : email , password : password, cpassword : cpassword,
+    //     code : code};
+    $.ajax({
+        type: "POST",
+        data :JSON.stringify(person),
+        url: "http://172.17.11.7:5000/api/v1/auth/signup",
+        contentType: "application/json",
+        dataType: "json",
+        async: false,
+        success: function(j){
+            var obj = j.object;
+            $("#myCost").append()
+			$("#myYear").append()
+			$("#myKilometer").append()
+            $("#myAutomatic").append()
+            $("#myColor").append()
+            $("#myDescription").append()
+        }
+    })
+});
