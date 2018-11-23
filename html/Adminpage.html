@@ -162,10 +162,9 @@
         <br>
         <h1 style="text-align: center ; color: darkred" class="myInfo">Add your Car</h1>
         <form id="msform">
-            <ul id="progressbar">
-                <li class="active">Car Information</li>
-                <li>Add photo</li>
-            </ul>
+            <!--<ul id="progressbar">-->
+                <!--<li class="active">Car Information</li>-->
+            <!--</ul>-->
             <fieldset>
                 <h2 class="fs-title">Add your car</h2>
                 <input type="text" name="Car-name" placeholder="Car name">
@@ -180,11 +179,12 @@
                 <input type="text" name="color" placeholder="Color of your car">
                 <input type="text" name="kilometer" placeholder="Kilometer">
                 <input type="text" name="description" placeholder="About your car...">
-                <input type="button" name="next" class="next action-button" value="Next"/>
+                <input type="button" name="next" class="next action-button" value="Add" id="mySubmit"/>
             </fieldset>
         </form>
     </div>
 </section>
+<script src="../js/vendor/jquery-3.3.1.min.js"></script>
 <script src="../js/Admin.js"></script>
 </body>
 </html>
