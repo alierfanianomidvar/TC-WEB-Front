@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TC</title>
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+    <link rel="stylesheet" href="../css/User-AddCar.css" type="text/css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="bg-image"></div>
+
+<form id="msform">
+    <ul id="progressbar">
+        <li class="active">Car Information</li>
+        <li>Add photo</li>
+    </ul>
+    <fieldset>
+        <h2 class="fs-title">Add your car</h2>
+        <input type="text" name="Car name" placeholder="Car name">
+        <input type="text" name="Car company" placeholder="Car company">
+        <input type="text" name="year of manufacture of your car" placeholder="Year of manufacture of your car?!">
+        <!--<input type="text" name="gender" placeholder="Gender">-->
+        <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <input type="text" name="color" placeholder="Color of your car">
+        <input type="text" name="kilometer" placeholder="Kilometer">
+        <input type="text" name="description" placeholder="About your car...">
+        <input type="button" name="next" class="next action-button" value="Next"/>
+    </fieldset>
+    <fieldset>
+        <div class="row">
+            <div id="upload-photo" class="lfloat" onclick="openImageUploadBox(event)">
+                <div class="upload-txt">
+                    Add Photo
+                </div>
+                <img id="profilePic" src="" alt="" class="profile-image"/>
+            </div>
+        <div style="margin-top: 300px">
+            <p ><span class=" glyphicon glyphicon-arrow-up"></span> upload</p>
+        </div>
+        </div>
+    </fieldset>
+</form>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+<script type="text/javascript" src="./index.js"></script>
+
+<script src="../js/User-AddCar.js"></script>
+
+
+</body>
+
+</html>
+
+
