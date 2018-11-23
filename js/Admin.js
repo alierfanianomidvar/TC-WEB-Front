@@ -77,5 +77,31 @@ $(".previous").click(function(){
 
 $(".submit").click(function(){
     return false;
-})
+});
+
+$("#mySubmit").click(function () {
+
+    var name = $("input[name=Car-name]").val();
+    var factory = $("input[name=Car-company]").val();
+    var year = $("input[name=year]").val();
+    var color = $("input[name=color]").val();
+    var kilometer = $("input[name=kilometer]").val();
+    var description = $("input[name=description]").val();
+    var automate = $("select[name=automate] option:selected").val();
+    var price = $("input[name=Cost]").val();
+    var car = {automate: automate, color: color, description: description, factory: factory, kilometer: kilometer,
+        name: name, price: price, year: year};
+    $.ajax({
+        type: "POST",
+        data :JSON.stringify(car),
+        url: "http://172.17.9.255:5000/api/v1/cars",
+        contentType: "application/json",
+        dataType: "json",
+        async: false,
+        success: function(j){
+            console.log(j.status);
+        }
+    })
+});
+
 
