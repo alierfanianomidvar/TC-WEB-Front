@@ -9,11 +9,10 @@
     <link rel="icon" href="../img/icon.png">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/normalize.css">
+    <!--<link rel="stylesheet" href="../css/normalize.css">-->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -37,7 +36,7 @@
 
         .Login {
             background: url("../img/alireza-attari-569127-unsplash.jpg");
-            width: 100%;
+            width:
             height: 10%;
             filter: blur(8px);
             -webkit-filter: blur(8px);
@@ -147,6 +146,15 @@
             margin-top: 12px;
         }
 
+
+        #myLogin{
+            margin-bottom: 10px;
+        }
+
+        /*#invalid{*/
+            /*color: #FF3A25;*/
+        /*}*/
+
     </style>
 
 
@@ -159,21 +167,24 @@
             <h1 class="myInfo" style="color: #ac2925">TehranCar</h1>
             <p>Login</p>
         </div>
-        <form class="login-form">
+        <form class="login-form" method="post">
             <div class="control-group">
+                <!--<label class="login-field-icon fui-user" id="invalid" hidden>Invalid username or password</label>-->
                 <input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username" required>
-                <label class="login-field-icon fui-user" for="login-name" required></label>
             </div>
 
             <input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="password" required>
             <label class="login-field-icon fui-lock" for="login-pass" required></label>
-            <p><input class="btn btn-primary btn-large btn-block " href="#"  type="submit" value="Login"/></p>
+            <input class="btn btn-primary btn-large btn-block " id="myLogin"  type="button" value="Login"/>
         </form>
 
         <a class="login-link" href="#" style="text-align: center">Lost your password?</a>
         <a class="login-link" href="HomePage.html" style="text-align: center">Back to Home Page</a>
     </div>
 </div>
+
+<script src="../js/vendor/jquery-3.3.1.min.js"></script>
+<script src="../js/main.js"></script>
 
 </body>
 </html>
