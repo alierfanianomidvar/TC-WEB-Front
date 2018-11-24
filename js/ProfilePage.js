@@ -81,7 +81,7 @@ $(".submit").click(function(){
 	return false;
 })
 
-$("#myNext").click(function () {
+// $("#myNext").click(function () {
     // var name = $("input[name=name]").val();
     // var family = $("input[name=family]").val();
     // var idNum = $("input[name=IdNumber]").val();
@@ -100,18 +100,20 @@ $("#myNext").click(function () {
     $.ajax({
         type: "POST",
         data :JSON.stringify(person),
-        url: "http://172.17.11.7:5000/api/v1/auth/signup",
+        url: "http://172.20.10.6:5000/api/v1/cars/" + "3",
         contentType: "application/json",
         dataType: "json",
         async: false,
         success: function(j){
             var obj = j.object;
-            $("#myCost").append()
-			$("#myYear").append()
-			$("#myKilometer").append()
-            $("#myAutomatic").append()
-            $("#myColor").append()
-            $("#myDescription").append()
+            $("#myName").append(obj.name);
+            $("#myCost").append(obj.price);
+			$("#myYear").append(obj.year);
+			$("#myKilometer").append(obj.kilometer);
+            $("#myAutomatic").append(obj.automate);
+            $("#myColor").append(obj.color);
+            $("#myDescription").append(obj.description);
         }
-    })
-});
+    });
+console.log("aaaaa");
+// });
