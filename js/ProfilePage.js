@@ -97,49 +97,58 @@ $(".submit").click(function(){
     // var person = {name : name, family : family, identificationId : idNum , gender : gender , birthday : birthday , mobileNum : mobileNum,
     //     phoneNum : phoneNum , username : username , email : email , password : password, cpassword : cpassword,
     //     code : code};
-    $.ajax({
-        type: "POST",
-        data :JSON.stringify(person),
-        url: "http://172.20.10.6:5000/api/v1/cars/" + "3",
-        contentType: "application/json",
-        dataType: "json",
-        async: false,
-        success: function(j){
-            var obj = j.object;
-            $("#myName").append(obj.name);
-            $("#myCost").append(obj.price);
-			$("#myYear").append(obj.year);
-			$("#myKilometer").append(obj.kilometer);
-            $("#myAutomatic").append(obj.automate);
-            $("#myColor").append(obj.color);
-            $("#myDescription").append(obj.description);
-        }
-    });
-console.log("aaaaa");
 
 
-$("#myLogin").click(function () {
-    var username = $("input[name=username]").val();
-    var password = $("input[name=password]").val();
 
-    var person = {username : username , password : password};
+//     $.ajax({
+//         type: "GET",
+//         // data :JSON.stringify(person),
+//         url: "http://172.20.10.6:5000/api/v1/cars/" + "3",
+//         contentType: "application/json",
+//         dataType: "json",
+//         async: false,
+//         success: function(j){
+//
+//             var obj = j.object;
+//             $("#myName").append(obj.name);
+//             $("#myCost").append(obj.price);
+// 			$("#myYear").append(obj.year);
+// 			$("#myKilometer").append(obj.kilometer);
+//             $("#myAutomatic").append(obj.automate);
+//             $("#myColor").append(obj.color);
+//             $("#myDescription").append(obj.description);
+//         }
+//     });
+// console.log("aaaaa");
 
-    $.ajax({
-        type: "POST",
-        data :JSON.stringify(person),
-        url: "http://172.17.9.255:5000/api/v1/auth/login",
-        contentType: "application/json",
-        dataType: "json",
-        async: false,
-        success: function(j){
-            if (j.status == "invalid credentials!"){
-                window.alert("Invalid username and password");
-                window.location.replace("file:///D:/TC-WEB-Front/html/Login.html");
-            }else{
-                console.log("asasasasasa");
-                window.location.replace(); //user profile
-            }
-        }
-    })
-});
+
+
+
+
+
+
+// $("#myLogin").click(function () {
+//     var username = $("input[name=username]").val();
+//     var password = $("input[name=password]").val();
+//
+//     var person = {username : username , password : password};
+//
+//     $.ajax({
+//         type: "POST",
+//         data :JSON.stringify(person),
+//         url: "http://172.17.9.255:5000/api/v1/auth/login",
+//         contentType: "application/json",
+//         dataType: "json",
+//         async: false,
+//         success: function(j){
+//             if (j.status == "invalid credentials!"){
+//                 window.alert("Invalid username and password");
+//                 window.location.replace("file:///D:/TC-WEB-Front/html/Login.html");
+//             }else{
+//                 console.log("asasasasasa");
+//                 window.location.replace(); //user profile
+//             }
+//         }
+//     })
 // });
+// // });
