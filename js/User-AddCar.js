@@ -93,7 +93,7 @@ $("#mySubmit").click(function () {
     $.ajax({
         type: "POST",
         data :JSON.stringify(car),
-        url: "http://172.17.9.255:5000/api/v1/cars",
+        url: "http://172.20.10.6:5000/api/v1/cars",
         contentType: "application/json",
         dataType: "json",
         async: false,
