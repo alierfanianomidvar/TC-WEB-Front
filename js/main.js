@@ -8,7 +8,7 @@ $("#myLogin").click(function () {
     $.ajax({
         type: "POST",
         data :JSON.stringify(person),
-        url: "http://172.17.9.255:5000/api/v1/auth/login",
+        url: "http://172.20.10.6:5000/api/v1/auth/login",
         contentType: "application/json",
         dataType: "json",
         async: false,
@@ -17,8 +17,15 @@ $("#myLogin").click(function () {
                 window.alert("Invalid username and password");
                 window.location.replace("file:///D:/TC-WEB-Front/html/Login.html");
             }else{
-                console.log("asasasasasa");
-                window.location.replace(); //user profile
+                if (j.object.role=="admin") {
+                    console.log("asasasasasa");
+                    window.location.replace("file:///D:/TC-WEB-Front/html/Adminpage.html");
+                }
+                else {
+                    console.log("bbbbbbbbbb");
+                    window.location.replace("file:///D:/TC-WEB-Front/html/User-profilepage.html");
+                }
+                 //user profile
             }
         }
     })
