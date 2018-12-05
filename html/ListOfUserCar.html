@@ -31,7 +31,8 @@
     <!--<script src="../js/bootstrap.js"></script>-->
 
     <title>TC</title>
-
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+          integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="../css/AdminUserList.css" type="text/css">
@@ -48,9 +49,10 @@
         }
 
         html, body {
-            height: 100%;
+            height: 13;kldsnr;yothsduigh.soidfjg0%;
             background: url("../img/alireza-heydarifard-775076-unsplash.jpg");
             background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .column1 {
@@ -88,45 +90,71 @@
             <div class="col-sm-2 ">
 
             </div>
-            <div class="col-sm-8 text-left" style="padding-top: 100px">
-                <button class="accordion">Ali Omidvar</button>
+            <div class="col-sm-8 " style="padding-top: 100px">
+                <button class="accordion" onclick="myFunction()">Ali Omidvar</button>
                 <div class="panel">
                     <!-- <div class="col-sm-5">
                          <div class="well">
                          </div>
                      </div>-->
-                    <div class="row">
-                        <div class="col-md-12" style="padding-top: 10px">
-                            <div class="well">
-                                <p class="text-left">Cost:<input class="form-control" type="text" placeholder="Readonly input here…" readonly></p>
+                    <div class="text-right">
+                        <button class="btn btn-block" onclick="myFunction1()" style='font-size:24px'><i class='fas fa-edit'></i></button>
+                    </div>
+
+                    <h6> upload your photo</h6>
+                    <div class="container">
+                        <div class="upload-img" id="Edit_photo">
+                            <div class="img-edit">
+                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg , .tiff"/>
+                                <label for="imageUpload"><span
+                                        class="glyphicon glyphicon-camera"
+                                        style="padding-right: 3px ; margin-top: 8px ; margin-left: 1px"></span></label>
                             </div>
-                            <dic class=" row">
-                                <div class="well column">
-                                    <p class="text-left">Year:<input type="text" id="myText"></p>
+                            <div class="img-preview">
+                                <div id="imagePreview" style="background-image: url(../img/upload.png);">
                                 </div>
-                                <div class="well column">
-                                    <p class="text-left">kilometer:<input type="text" id="myText"></p>
-                                </div>
-                                <div class="well column">
-                                    <p class="text-left">automatic: <b id="myAutomatic"></b></p>
-                                </div>
-                            </dic>
-                            <div class="well">
-                                <p class="text-left">color: <b id="myColor"></b></p>
                             </div>
                         </div>
                     </div>
-                    <div class="well">
-                        <p class="text-left"> description: <b id="myDescription"></b></p>
+                    <div class="text-left">
+                        <hr>
+                        <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
+                                                          style="padding-right: 3px"></span>Name : Ali</p>
+                        <hr>
+                        <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
+                                                          style="padding-right: 3px"></span>Company Name : KIA</p>
+                        <hr>
+                        <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
+                                                          style="padding-right: 3px"></span>Cost: <input type="text"
+                                                                                                         id="mycost">
+                        </p>
+                        <hr>
+                        <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
+                                                          style="padding-right: 3px"></span>kilometer :<input
+                                type="text" id="mykilomete"></p>
+                        <hr>
+                        <p style="padding-top: 7px"><span class="glyphicon glyphicon-phone"
+                                                          style="padding-right: 3px"></span>automatic : <input
+                                type="text" id="myautomatic"></p>
+                        <hr>
+                        <p style="padding-top: 7px"><span class="glyphicon glyphicon-envelope"
+                                                          style="padding-right: 3px"></span>Year :2018</p>
+                        <hr>
+                        <p style="padding-top: 7px"><span class="glyphicon glyphicon-envelope"
+                                                          style="padding-right: 3px"></span>description:<input
+                                type="text" id="mydesc"></p>
+                        <hr>
+                        <button class="btn btn-danger "><span
+                                class="glyphicon glyphicon-remove" style="padding-right: 3px"></span>Delete
+                        </button>
+                        <button class="btn btn-success " id="Save"><span
+                                class="glyphicon glyphicon-save" style="padding-right: 3px"
+                                onclick="myFunction()"></span>Save
+                        </button>
+                        <hr>
                     </div>
-                    <input type="button" name="next" id="myNext" class="next action-button col-md-2"
-                           style="float: right"
-                           value="Next"/>
                 </div>
             </div>
-
-
-
         </div>
         <div class="col-sm-2 sidenav">
 
@@ -149,6 +177,25 @@
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
         });
+    }
+
+
+    function myFunction() {
+        document.getElementById("mycost").disabled = true;
+        document.getElementById("mykilomete").disabled = true;
+        document.getElementById("myautomatic").disabled = true;
+        document.getElementById("mydesc").disabled = true;
+        document.getElementById("Save").disabled = true;
+        document.getElementById("Edit_photo").disabled = true;
+    }
+
+    function myFunction1() {
+        document.getElementById("mycost").disabled = false;
+        document.getElementById("mykilomete").disabled = false;
+        document.getElementById("myautomatic").disabled = false;
+        document.getElementById("mydesc").disabled = false;
+        document.getElementById("Save").disabled = false;
+        document.getElementById("Edit_photo").disabled = false;
     }
 </script>
 
