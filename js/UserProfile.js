@@ -14,6 +14,18 @@ $.ajax({
     }
 });
 
+$("#myCarList").click(function () {
+    window.location.replace("http://172.20.10.6:5000/templates/html/ListOfUserCar.html")
+});
+
+$("#myAddCar").click(function () {
+    window.location.replace("http://172.20.10.6:5000/templates/html/User-Addcar.html")
+});
+
+$("#myLogout").click(function () {
+    window.location.replace("http://172.20.10.6:5000/templates/html/Login.html")
+})
+
 $("#rent1").click(function () {
     $.ajax({
         type: "GET",
@@ -23,7 +35,7 @@ $("#rent1").click(function () {
         dataType: "json",
         async: false,
         success: function(j){
-            window.location.replace("file:///D:/TC-WEB-Front/html/profilePage.html");
+            window.location.replace("http://172.20.10.6:5000/templates/html/profilePage.html");
             var obj = j.object;
             $("#myName").append(obj.name);
             $("#myCost").append(obj.price);
