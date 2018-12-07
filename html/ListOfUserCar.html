@@ -35,9 +35,10 @@
           integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/AdminUserList.css" type="text/css">
+    <!--<link rel="stylesheet" href="../css/AdminUserList.css" type="text/css">-->
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
     <STYLE>
         @font-face {
             font-family: "MyFont";
@@ -71,11 +72,11 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="file:///D:/TC-WEB-Front/html/User-Addcar.html"><span
+            <li ><a id="myCarList"> <span
                     class="glyphicon glyphicon-list "></span> List of my car</a></li>
-            <li><a href="file:///D:/TC-WEB-Front/html/User-Addcar.html"><span
+            <li><a id="myAddCar"><span
                     class="glyphicon glyphicon-new-window "></span> Add car</a></li>
-            <li><a href="Login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a id="myLogout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
     </div>
 
@@ -119,37 +120,36 @@
                     <div class="text-left">
                         <hr>
                         <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
-                                                          style="padding-right: 3px"></span>Name : Ali</p>
+                                                          style="padding-right: 3px"></span>Name : <a id="myName"></a></p>
                         <hr>
                         <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
-                                                          style="padding-right: 3px"></span>Company Name : KIA</p>
+                                                          style="padding-right: 3px"></span>Company Name : <a id="myCompany"></a></p>
                         <hr>
                         <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
-                                                          style="padding-right: 3px"></span>Cost: <input type="text"
+                                                          style="padding-right: 3px"></span>Cost: <input name="price" type="text"
                                                                                                          id="mycost">
                         </p>
                         <hr>
                         <p style="padding-top: 7px"><span class="glyphicon glyphicon-user"
-                                                          style="padding-right: 3px"></span>kilometer :<input
-                                type="text" id="mykilomete"></p>
+                                                          style="padding-right: 3px"></span>kilometer :<input name="kilometer"
+                                                                                                              type="text" id="mykilomete"></p>
                         <hr>
                         <p style="padding-top: 7px"><span class="glyphicon glyphicon-phone"
-                                                          style="padding-right: 3px"></span>automatic : <input
-                                type="text" id="myautomatic"></p>
+                                                          style="padding-right: 3px"></span>automatic : <a id="myautomate"></a></p>
                         <hr>
                         <p style="padding-top: 7px"><span class="glyphicon glyphicon-envelope"
-                                                          style="padding-right: 3px"></span>Year :2018</p>
+                                                          style="padding-right: 3px"></span>Year : <a id="myYear"></a></p>
                         <hr>
                         <p style="padding-top: 7px"><span class="glyphicon glyphicon-envelope"
-                                                          style="padding-right: 3px"></span>description:<input
-                                type="text" id="mydesc"></p>
+                                                          style="padding-right: 3px"></span>description:<input name="description"
+                                                                                                               type="text" id="mydesc"></p>
                         <hr>
-                        <button class="btn btn-danger "><span
+                        <button id="myDelete" class="btn btn-danger "><span
                                 class="glyphicon glyphicon-remove" style="padding-right: 3px"></span>Delete
                         </button>
-                        <button class="btn btn-success " id="Save"><span
+                        <button id="mySave" class="btn btn-success " id="Save" onclick="myFunction()"><span
                                 class="glyphicon glyphicon-save" style="padding-right: 3px"
-                                onclick="myFunction()"></span>Save
+                        ></span>Save
                         </button>
                         <hr>
                     </div>
@@ -183,21 +183,22 @@
     function myFunction() {
         document.getElementById("mycost").disabled = true;
         document.getElementById("mykilomete").disabled = true;
-        document.getElementById("myautomatic").disabled = true;
         document.getElementById("mydesc").disabled = true;
-        document.getElementById("Save").disabled = true;
         document.getElementById("imageUpload").disabled = true;
     }
 
     function myFunction1() {
+
         document.getElementById("mycost").disabled = false;
         document.getElementById("mykilomete").disabled = false;
-        document.getElementById("myautomatic").disabled = false;
         document.getElementById("mydesc").disabled = false;
-        document.getElementById("Save").disabled = false;
         document.getElementById("imageUpload").disabled = false;
     }
 </script>
+
+
+<script src="../js/vendor/jquery-3.3.1.min.js"></script>
+<script src="../js/ListOfUserCar.js"></script>
 
 </body>
 </html>
