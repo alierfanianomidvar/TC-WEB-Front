@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta charset="UTF-8">
+    <title>TC</title>
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+    <link rel="stylesheet" href="../css/Admin.css" type="text/css">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!--<script src="../js/vendor/modernizr-2.8.3.min.js"></script>-->
+    <!--<script src="../js/bootstrap.js"></script>-->
+
+    <title>TC</title>
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+          integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!--<link rel="stylesheet" href="../css/normalize.css">-->
+    <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--<link rel="stylesheet" type="text/css" href="../index.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <STYLE>
+        @font-face {
+            font-family: "MyFont";
+            src: url(../fonts/WHOOPASS.TTF);
+        }
+
+        .myInfo {
+            font-family: MyFont;
+        }
+
+        html, body {
+            height: 100%;
+            background-color: #222
+        }
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: -1px;
+        }
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0 20px;
+        }
+        h1 small {
+            display: block;
+            font-size: 15px;
+            padding-top: 8px;
+            color: gray;
+        }
+
+    </STYLE>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-dark bg-dark" role="navigation">
+    <div class="">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll myInfo" href="" style="color: darkred">TehranCar</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="page-scroll" href="AdminUserList.html"><span class="glyphicon glyphicon-user "
+                                                                           style="padding-right: 3px"></span>List of
+                        User</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#page1"><span class="fas fa-car-side"
+                                                               style="padding-right: 3px"></span>List of car</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="" class="page-scroll" style="padding-right: 25px!important;"><span
+                        class="glyphicon glyphicon-log-out" style="padding-right: 3px"></span>Log out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="" id="page0" style="background-color: #222 ; height: 100%; padding-top: 40px; padding-bottom: 10px">
+
+    <div style="background-color: #222 ; height: 100%">
+        <br>
+        <h1 style="text-align: center ; color: darkred" class="myInfo">Add your Car</h1>
+        <form id="msform">
+            <ul id="progressbar">
+                <li class="active">Car Information</li>
+            </ul>
+            <fieldset>
+                <h2 class="fs-title">Add your car</h2>
+
+
+                <!--part of upload img -->
+                <h6 > upload your photo</h6>
+                <div class="container">
+                    <div class="upload-img">
+                        <div class="img-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg , .tiff" />
+                            <label for="imageUpload" class=" "><span
+                                    class="glyphicon glyphicon-camera" style="padding-right: 3px ; margin-top: 8px ; margin-left: 1px"></span></label>
+                        </div>
+                        <div class="img-preview">
+                            <div id="imagePreview" style="background-image: url(../img/upload.png);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- part of add thr info -->
+                <input type="text" name="Car-name" placeholder="Car name">
+                <input type="text" name="Car-company" placeholder="Car company">
+                <input type="text" name="year" placeholder="Year of manufacture of your car?!">
+                <!--<input type="text" name="gender" placeholder="Gender">-->
+                <select name="automate">
+                    <option value="automate">automate</option>
+                    <option value="manual">manual</option>
+                </select>
+                <input type="text" name="Cost" placeholder="Cost ...">
+                <input type="text" name="color" placeholder="Color of your car">
+                <input type="text" name="kilometer" placeholder="Kilometer">
+                <input type="text" name="description" placeholder="About your car...">
+                <input type="button" name="next" class="next action-button" value="Add" id="mySubmit"/>
+            </fieldset>
+        </form>
+    </div>
+
+
+</section>
+
+<SCRIPT>
+    // for upload photo
+    
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function() {
+        readURL(this);
+    });
+
+</SCRIPT>
+<script src="../js/vendor/jquery-3.3.1.min.js"></script>
+<script src="../js/Admin.js"></script>
+</body>
+</html>
+

@@ -44,7 +44,10 @@
         .myInfo {
             font-family: MyFont;
         }
-
+        html,body{
+            height: 100%;
+            background-color: #222
+        }
         .column1 {
             float: left;
             width: 32.5%;
@@ -64,30 +67,33 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand page-scroll" href="" style="">TehranCar</a>
+        <a class="navbar-brand page-scroll myInfo" href="" style="color: darkred">TehranCar</a>
     </div>
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-            <li >
-                <a class="page-scroll" href="#page0"><span class="glyphicon glyphicon-remove"></span>Delete</a>
+            <li>
+                <a class="page-scroll" href="AdminUserList.html"><span class="glyphicon glyphicon-user "
+                                                           style="padding-right: 3px"></span>List of User</a>
             </li>
             <li>
-                <a class="page-scroll" href="#page1" ><span class="glyphicon glyphicon-upload"></span>Add car</a>
+                <a class="page-scroll" href="#page1"><span class="glyphicon glyphicon-upload"
+                                                           style="padding-right: 3px"></span>Add car</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href=""><span class="glyphicon glyphicon-log-out"></span>Log out</a></li>
+            <li><a href="" class="page-scroll" style="padding-right: 25px!important;"><span
+                    class="glyphicon glyphicon-log-out" style="padding-right: 3px"></span>Log out</a></li>
         </ul>
     </div>
 </div>
 </nav>
-<section class="" id="page0" style="background-color: #222 ; height: 100%">
+<section class="" id="page0" style="background-color: #222 ; height: 100%; padding-top: 10px; padding-bottom: 10px">
     <div >
         <div class="">
             <br>
             <br>
-            <h1 style="text-align: center ; color: darkred" class="myInfo">Delete Car</h1>
+            <h1 style="text-align: center ; color: darkred" class="myInfo">List of Car</h1>
             <div class="w3-content" style="max-width:1100px; margin-left: 17% ; text-align: center">
                 <div class="w3-row-padding">
                     <div class="w3-half w3-margin-bottom column1">
@@ -96,7 +102,7 @@
                             <h3>KIA,sportage</h3>
                             <p class="w3-opacity">Cost: $1000</p>
                             <p>Km : 1000</p>
-                            <button class="w3-button w3-margin-bottom">Delete</button>
+                            <button class="w3-button w3-margin-bottom">Profile</button>
                         </div>
                     </div>
 
@@ -106,7 +112,7 @@
                             <h3>hyundai, tucson</h3>
                             <p class="w3-opacity">Cost: $3900</p>
                             <p>Km : 1000</p>
-                            <button class="w3-button w3-margin-bottom">Delete</button>
+                            <button class="w3-button w3-margin-bottom">Profile</button>
                         </div>
                     </div>
                     <div class="w3-half w3-margin-bottom column1">
@@ -115,7 +121,7 @@
                             <h3>BMW, i8</h3>
                             <p class="w3-opacity">Cost: $200</p>
                             <p>Km : 1000</p>
-                            <button class="w3-button w3-margin-bottom">Delete</button>
+                            <button class="w3-button w3-margin-bottom">Profile</button>
                         </div>
                     </div>
                 </div>
@@ -128,7 +134,7 @@
                             <h3>iran khodro, dana</h3>
                             <p class="w3-opacity">Cost: $7900</p>
                             <p>Km : 1000</p>
-                            <button class="w3-button w3-margin-bottom">Delete</button>
+                            <button class="w3-button w3-margin-bottom">Profile</button>
                         </div>
                     </div>
                     <div class="w3-half w3-margin-bottom column1">
@@ -137,7 +143,7 @@
                             <h3>saipa,131</h3>
                             <p class="w3-opacity">Cost: $540</p>
                             <p>Km : 1000</p>
-                            <button class="w3-button w3-margin-bottom">Delete</button>
+                            <button class="w3-button w3-margin-bottom">Profile</button>
                         </div>
                     </div>
                     <div class="w3-half w3-margin-bottom column1">
@@ -146,7 +152,7 @@
                             <h3>mazda , 3 new</h3>
                             <p class="w3-opacity">Cost: $400</p>
                             <p>Km : 1000</p>
-                            <button class="w3-button w3-margin-bottom">Delete</button>
+                            <button class="w3-button w3-margin-bottom">Profile</button>
                         </div>
                     </div>
                 </div>
@@ -156,33 +162,6 @@
     <br>
     <hr>
 
-</section>
-<section class=" " id="page1">
-    <div style="background-color: #222 ; height: 100%">
-        <br>
-        <h1 style="text-align: center ; color: darkred" class="myInfo">Add your Car</h1>
-        <form id="msform">
-            <!--<ul id="progressbar">-->
-                <!--<li class="active">Car Information</li>-->
-            <!--</ul>-->
-            <fieldset>
-                <h2 class="fs-title">Add your car</h2>
-                <input type="text" name="Car-name" placeholder="Car name">
-                <input type="text" name="Car-company" placeholder="Car company">
-                <input type="text" name="year" placeholder="Year of manufacture of your car?!">
-                <!--<input type="text" name="gender" placeholder="Gender">-->
-                <select name="automate">
-                    <option value="automate">automate</option>
-                    <option value="manual">manual</option>
-                </select>
-                <input type="text" name="Cost" placeholder="Cost ...">
-                <input type="text" name="color" placeholder="Color of your car">
-                <input type="text" name="kilometer" placeholder="Kilometer">
-                <input type="text" name="description" placeholder="About your car...">
-                <input type="button" name="next" class="next action-button" value="Add" id="mySubmit"/>
-            </fieldset>
-        </form>
-    </div>
 </section>
 <script src="../js/vendor/jquery-3.3.1.min.js"></script>
 <script src="../js/Admin.js"></script>
