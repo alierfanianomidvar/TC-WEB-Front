@@ -1,4 +1,4 @@
-
+var token = $.cookie("token");
 $("#mySubmit").click(function () {
 
     var name = $("input[name=car-name]").val();
@@ -24,6 +24,9 @@ $("#mySubmit").click(function () {
         contentType: "application/json",
         dataType: "json",
         async: false,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Access-Token', token);
+        },
         success: function(j){
             window.location.replace("http://172.20.10.6:5000/templates/html/User-profilepage.html")
         }
