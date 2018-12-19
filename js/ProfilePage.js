@@ -81,6 +81,8 @@ $(".submit").click(function(){
 	return false;
 });
 
+var token = $.cookie("token");
+
 $.ajax({
     type: "GET",
     // data :JSON.stringify(person),
@@ -88,6 +90,9 @@ $.ajax({
     contentType: "application/json",
     dataType: "json",
     async: false,
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader('Access-Token', token);
+    },
     success: function(j){
 
         var obj = j.object;
