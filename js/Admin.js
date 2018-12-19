@@ -79,6 +79,8 @@ $(".submit").click(function(){
     return false;
 });
 
+var token = $.cookie("token");
+
 $("#mySubmit").click(function () {
 
     var name = $("input[name=Car-name]").val();
@@ -98,6 +100,9 @@ $("#mySubmit").click(function () {
         contentType: "application/json",
         dataType: "json",
         async: false,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Access-Token', token);
+        },
         success: function(j){
             console.log(j.status);
         }
