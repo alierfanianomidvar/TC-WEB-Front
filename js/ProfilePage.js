@@ -81,8 +81,6 @@ $(".submit").click(function(){
 	return false;
 });
 
-var id = Cookies.get('id');
-
 $.ajax({
     type: "GET",
     // data :JSON.stringify(person),
