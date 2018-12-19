@@ -79,76 +79,32 @@ $(".previous").click(function(){
 
 $(".submit").click(function(){
 	return false;
-})
+});
 
-// $("#myNext").click(function () {
-    // var name = $("input[name=name]").val();
-    // var family = $("input[name=family]").val();
-    // var idNum = $("input[name=IdNumber]").val();
-    // var gender = $("input[name=gender]").val();
-    // var birthday = $("input[name=birthday]").val();
-    // var mobileNum = $("input[name=mobileNumber]").val();
-    // var phoneNum = $("input[name=phoneNumber]").val();
-    // var username = $("input[name=username]").val();
-    // var email = $("input[name=email]").val();
-    // var password = $("input[name=pass]").val();
-    // var cpassword = $("input[name=cpass]").val();
-    // var code = $("input[name=emailCode]").val();
-    // var person = {name : name, family : family, identificationId : idNum , gender : gender , birthday : birthday , mobileNum : mobileNum,
-    //     phoneNum : phoneNum , username : username , email : email , password : password, cpassword : cpassword,
-    //     code : code};
+var id = Cookies.get('id');
 
+$.ajax({
+    type: "GET",
+    // data :JSON.stringify(person),
+    url: "http://172.20.10.6:5000/api/v1/cars/" + id,
+    contentType: "application/json",
+    dataType: "json",
+    async: false,
+    success: function(j){
 
+        var obj = j.object;
+        $("#myName").append(obj.name);
+        $("#myCost").append(obj.price);
+        $("#myYear").append(obj.year);
+        $("#myKilometer").append(obj.kilometer);
+        if (obj == true) {
+            $("#myAutomatic").append("automate");
+        }else {
+            $("#myAutomatic").append("manual");
+        }
+        $("#myColor").append(obj.color);
+        $("#myDescription").append(obj.description);
+    }
+});
+console.log("aaaaa");
 
-//     $.ajax({
-//         type: "GET",
-//         // data :JSON.stringify(person),
-//         url: "http://172.20.10.6:5000/api/v1/cars/" + "3",
-//         contentType: "application/json",
-//         dataType: "json",
-//         async: false,
-//         success: function(j){
-//
-//             var obj = j.object;
-//             $("#myName").append(obj.name);
-//             $("#myCost").append(obj.price);
-// 			$("#myYear").append(obj.year);
-// 			$("#myKilometer").append(obj.kilometer);
-//             $("#myAutomatic").append(obj.automate);
-//             $("#myColor").append(obj.color);
-//             $("#myDescription").append(obj.description);
-//         }
-//     });
-// console.log("aaaaa");
-
-
-
-
-
-
-
-// $("#myLogin").click(function () {
-//     var username = $("input[name=username]").val();
-//     var password = $("input[name=password]").val();
-//
-//     var person = {username : username , password : password};
-//
-//     $.ajax({
-//         type: "POST",
-//         data :JSON.stringify(person),
-//         url: "http://172.17.9.255:5000/api/v1/auth/login",
-//         contentType: "application/json",
-//         dataType: "json",
-//         async: false,
-//         success: function(j){
-//             if (j.status == "invalid credentials!"){
-//                 window.alert("Invalid username and password");
-//                 window.location.replace("file:///D:/TC-WEB-Front/html/Login.html");
-//             }else{
-//                 console.log("asasasasasa");
-//                 window.location.replace(); //user profile
-//             }
-//         }
-//     })
-// });
-// // });
