@@ -20,7 +20,7 @@ $("#mySubmit").click(function () {
     $.ajax({
         type: "POST",
         data :JSON.stringify(car),
-        url: "http://172.20.10.6:5000/api/v1/cars",
+        url: ip + "/api/v1/cars",
         contentType: "application/json",
         dataType: "json",
         async: false,
@@ -28,8 +28,7 @@ $("#mySubmit").click(function () {
             xhr.setRequestHeader('Access-Token', token);
         },
         success: function(j){
-            window.location.replace("http://172.20.10.6:5000/templates/html/User-profilepage.html")
+            window.location.replace("../html/User-profilepage.html")
         }
     })
-    console.log("aaaaaaaa")
 });

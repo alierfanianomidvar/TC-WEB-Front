@@ -1,6 +1,6 @@
 var token = $.cookie("token");
 $.ajax({
-    url: "http://172.20.10.6:5000" + "/api/v1/cars",
+    url: ip + "/api/v1/cars",
     contentType: "application/json",
     dataType: "json",
     async: false,
@@ -20,20 +20,20 @@ $.ajax({
 });
 
 $("#myCarList").click(function () {
-    window.location.replace("http://172.20.10.6:5000" + "/templates/html/ListOfUserCar.html")
+    window.location.replace("../html/ListOfUserCar.html")
 });
 
 $("#myAddCar").click(function () {
-    window.location.replace("http://172.20.10.6:5000" + "/templates/html/User-Addcar.html")
+    window.location.replace("../html/User-Addcar.html")
 });
 
 $("#myLogout").click(function () {
-    window.location.replace("http://172.20.10.6:5000" + "/templates/html/Login.html")
+    window.location.replace("../html/Login.html")
 });
 
 $("#cd").click(function () {
     $.ajax({
-        url: "http://172.20.10.6:5000" + "/api/v1/sort/cars/price/0",
+        url: ip + "/api/v1/sort/cars/price/0",
         contentType: "application/json",
         dataType: "json",
         async: false,
@@ -56,7 +56,7 @@ $("#cd").click(function () {
 
 $("#ca").click(function () {
     $.ajax({
-        url: "http://172.20.10.6:5000" + "/api/v1/sort/cars/price/1",
+        url: ip + "/api/v1/sort/cars/price/1",
         contentType: "application/json",
         dataType: "json",
         async: false,
@@ -79,7 +79,7 @@ $("#ca").click(function () {
 
 $("#ya").click(function () {
     $.ajax({
-        url: "http://172.20.10.6:5000" + "/api/v1/sort/cars/year/1",
+        url: ip + "/api/v1/sort/cars/year/1",
         contentType: "application/json",
         dataType: "json",
         async: false,
@@ -102,7 +102,7 @@ $("#ya").click(function () {
 
 $("#yd").click(function () {
     $.ajax({
-        url: "http://172.20.10.6:5000" + "/api/v1/sort/cars/year/0",
+        url: ip + "/api/v1/sort/cars/year/0",
         contentType: "application/json",
         dataType: "json",
         async: false,

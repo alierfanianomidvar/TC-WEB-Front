@@ -1,6 +1,6 @@
 var token = $.cookie("token");
 $.ajax({
-    url: "http://172.20.10.6:5000/api/v1/cars/user",
+    url: ip + "/api/v1/cars/user",
     contentType: "application/json",
     dataType: "json",
     async: false,
@@ -26,30 +26,29 @@ $.ajax({
 });
 
 $("#myCarList").click(function () {
-    window.location.replace("http://172.20.10.6:5000/templates/html/ListOfUserCar.html")
+    window.location.replace("../html/ListOfUserCar.html")
 });
 
 $("#myAddCar").click(function () {
-    window.location.replace("http://172.20.10.6:5000/templates/html/User-Addcar.html")
+    window.location.replace("../html/User-Addcar.html")
 });
 
 $("#myLogout").click(function () {
-    window.location.replace("http://172.20.10.6:5000/templates/html/Login.html")
+    window.location.replace("../html/Login.html")
 })
 
 $("#myDelete").click(function () {
     $.ajax({
         method: "DELETE",
-        url: "http://172.20.10.6:5000/api/v1/cars/" + carId,
+        url: ip + "/api/v1/cars/" + carId,
         contentType: "application/json",
         dataType: "json",
         async: false,
         success: function (j) {
-            window.location.replace("http://172.20.10.6:5000/templates/html/ListOfUserCar.html")
+            window.location.replace("../html/ListOfUserCar.html")
         }
     })
 });
-console.log("aaaaa");
 
 $("#mySave").click(function () {
     var price = $("input[name=price]").val();
@@ -58,13 +57,13 @@ $("#mySave").click(function () {
     var car = {description: description, kilometer: kilometer, price: price};
     $.ajax({
         method: "PUT",
-        url: "http://172.20.10.6:5000/api/v1/cars/" + carId,
+        url: ip + "/api/v1/cars/" + carId,
         data :JSON.stringify(car),
         contentType: "application/json",
         dataType: "json",
         async: false,
         success: function (j) {
-            window.location.replace("http://172.20.10.6:5000/templates/html/ListOfUserCar.html")
+            window.location.replace("../html/ListOfUserCar.html")
         }
     })
 });

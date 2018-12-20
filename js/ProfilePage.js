@@ -85,8 +85,7 @@ var token = $.cookie("token");
 
 $.ajax({
     type: "GET",
-    // data :JSON.stringify(person),
-    url: "http://172.20.10.6:5000/api/v1/cars/" + id,
+    url: ip + "/api/v1/cars/" + id,
     contentType: "application/json",
     dataType: "json",
     async: false,
@@ -109,5 +108,3 @@ $.ajax({
         $("#myDescription").append(obj.description);
     }
 });
-console.log("aaaaa");
-

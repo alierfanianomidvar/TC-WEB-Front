@@ -78,7 +78,7 @@ $(".previous").click(function(){
 });
 
 $(".submit").click(function(){
-    window.location.replace("http://172.20.10.6:5000/templates/html/Login.html")
+    window.location.replace("../html/Login.html")
 })
 
 $("#myNext").click(function () {
@@ -100,7 +100,7 @@ $("#myNext").click(function () {
     $.ajax({
         type: "POST",
         data :JSON.stringify(person),
-        url: "http://172.20.10.6:5000/api/v1/users/signup",
+        url: ip + "/api/v1/users/signup",
         contentType: "application/json",
         dataType: "json",
         async: false,

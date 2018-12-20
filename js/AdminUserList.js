@@ -1,6 +1,6 @@
 var token = $.cookie("token");
 $.ajax({
-    url: "http://172.20.10.6:5000" + "/api/v1/users",
+    url: ip + "/api/v1/users",
     contentType: "application/json",
     dataType: "json",
     async: false,
