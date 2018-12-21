@@ -23,6 +23,10 @@ $.ajax({
     }
 });
 
+$("#homeButt").click(function () {
+    window.location.replace("../html/UserProfile.html")
+});
+
 $("#myCarList").click(function () {
     window.location.replace("../html/ListOfUserCar.html")
 });
@@ -33,6 +37,7 @@ $("#myAddCar").click(function () {
 
 $("#myLogout").click(function () {
     window.location.replace("../html/Login.html")
+    token = $.cookie("token",null)
 });
 
 $("#cd").click(function () {
