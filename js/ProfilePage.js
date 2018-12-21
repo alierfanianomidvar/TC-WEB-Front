@@ -81,6 +81,7 @@ $(".submit").click(function(){
 	return false;
 });
 
+var id = $.cookie("carId");
 var token = $.cookie("token");
 
 $.ajax({
