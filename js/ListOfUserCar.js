@@ -25,6 +25,10 @@ $.ajax({
     }
 });
 
+$("#homebutt").click(function () {
+    window.location.replace("../html/User-profilepage.html")
+});
+
 $("#myCarList").click(function () {
     window.location.replace("../html/ListOfUserCar.html")
 });
@@ -34,8 +38,9 @@ $("#myAddCar").click(function () {
 });
 
 $("#myLogout").click(function () {
-    window.location.replace("../html/Login.html")
-})
+    window.location.replace("../html/Login.html");
+    token = $.cookie("token",null)
+});
 
 $("#myDelete").click(function () {
     $.ajax({
@@ -44,6 +49,9 @@ $("#myDelete").click(function () {
         contentType: "application/json",
         dataType: "json",
         async: false,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Access-Token', token);
+        },
         success: function (j) {
             window.location.replace("../html/ListOfUserCar.html")
         }
@@ -51,9 +59,28 @@ $("#myDelete").click(function () {
 });
 
 $("#mySave").click(function () {
-    var price = $("input[name=price]").val();
-    var kilometer = $("input[name=kilometer]").val();
-    var description = $("input[name=description]").val();
+    // var price = $("input[name=price]").val();
+    var price;
+    if ($("input[name=price]").val() == ""){
+        price = $("#mycost").attr("placeholder");
+    }else{
+        price = $("input[name=price]").val();
+    }
+
+    // var kilometer = $("input[name=kilometer]").val();
+    var kilometer;
+    if ($("input[name=kilometer]").val() == ""){
+        kilometer = $("#mykilomete").attr("placeholder");
+    }else {
+        kilometer = $("input[name=kilometer]").val()
+    }
+    // var description = $("input[name=description]").val();
+    var description;
+    if ($("input[name=description]").val() == "") {
+        description = $("#mydesc").attr("placeholder");
+    }else {
+        description = $("input[name=description]").val();
+    }
     var car = {description: description, kilometer: kilometer, price: price};
     $.ajax({
         method: "PUT",
@@ -62,6 +89,9 @@ $("#mySave").click(function () {
         contentType: "application/json",
         dataType: "json",
         async: false,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Access-Token', token);
+        },
         success: function (j) {
             window.location.replace("../html/ListOfUserCar.html")
         }
