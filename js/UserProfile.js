@@ -1,4 +1,8 @@
+
+var carId;
+
 var token = $.cookie("token");
+
 $.ajax({
     url: ip + "/api/v1/cars",
     contentType: "application/json",
