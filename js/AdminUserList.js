@@ -1,8 +1,12 @@
+var token = $.cookie("token");
 $.ajax({
     url: "http://172.20.10.6:5000" + "/api/v1/users",
     contentType: "application/json",
     dataType: "json",
     async: false,
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader('Access-Token', token);
+    },
     success: function (j) {
         var obj = j.object;
         console.log(obj);
