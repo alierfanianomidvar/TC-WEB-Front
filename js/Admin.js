@@ -79,19 +79,43 @@ $(".submit").click(function(){
     return false;
 });
 
-var token = $.cookie("token");
 
+$("#homeButt").click(function () {
+    window.location.replace("../html/Adminpage.html")
+});
+
+$("#users").click(function () {
+    window.location.replace("../html/AdminUserList.html")
+});
+
+$("#addCar").click(function () {
+    window.location.replace("../html/AdminAddCar.html")
+});
+
+$("#logout").click(function () {
+    window.location.replace("../html/Login.html");
+    token = $.cookie("token",null)
+});
+
+
+var token = $.cookie("token");
 $("#mySubmit").click(function () {
 
-    var name = $("input[name=Car-name]").val();
-    var factory = $("input[name=Car-company]").val();
+    var name = $("input[name=car-name]").val();
+    var factory = $("input[name=car-company]").val();
     var year = $("input[name=year]").val();
     var color = $("input[name=color]").val();
     var kilometer = $("input[name=kilometer]").val();
     var description = $("input[name=description]").val();
     var automate = $("select[name=automate] option:selected").val();
-    var price = $("input[name=Cost]").val();
-    var car = {automate: automate, color: color, description: description, factory: factory, kilometer: kilometer,
+    var automateBool;
+    if (automate == "automate") {
+        automateBool = true
+    } else {
+        automateBool = false
+    }
+    var price = $("input[name=price]").val();
+    var car = {automate: automateBool, color: color, description: description, factory: factory, kilometer: kilometer,
         name: name, price: price, year: year};
     $.ajax({
         type: "POST",
@@ -104,9 +128,7 @@ $("#mySubmit").click(function () {
             xhr.setRequestHeader('Access-Token', token);
         },
         success: function(j){
-            console.log(j.status);
+            window.location.replace("../html/Adminpage.html")
         }
     })
 });
-
-

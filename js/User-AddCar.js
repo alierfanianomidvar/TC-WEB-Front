@@ -32,3 +32,20 @@ $("#mySubmit").click(function () {
         }
     })
 });
+
+$("#homeButt").click(function () {
+    window.location.replace("../html/UserProfile.html")
+});
+
+$("#myCarList").click(function () {
+    window.location.replace("../html/ListOfUserCar.html")
+});
+
+$("#myAddCar").click(function () {
+    window.location.replace("../html/User-Addcar.html")
+});
+
+$("#myLogout").click(function () {
+    window.location.replace("../html/Login.html")
+    token = $.cookie("token",null)
+});
