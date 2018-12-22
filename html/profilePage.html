@@ -68,10 +68,10 @@
                 <button class="btn btn-default dropdown-toggle width_btn" type="button" id="menu1" data-toggle="dropdown">
                     <span id="menu2" style="color: darkred">src</span>
                     <span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="btn1">ki</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="btn2">dfs</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="btn3">dfas</a></li>
+                <ul class="src dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" id="btn1">ki</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" id="btn2">dfs</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" id="btn3">dfas</a></li>
                 </ul>
             </div>
             <div class="dropdown col-md-6">
@@ -79,10 +79,10 @@
                 <button class="btn btn-default dropdown-toggle width_btn" type="button" id="menu4" data-toggle="dropdown">
                     <span id="menu3" style="color: darkred">Des</span>
                     <span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu4">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="btn4">ki</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="btn5">dfs</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="btn6">dfas</a></li>
+                <ul class="des dropdown-menu" role="menu" aria-labelledby="menu4">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" id="btn4">ki</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" id="btn5">dfs</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" id="btn6">dfas</a></li>
                 </ul>
             </div>
             <hr class="col-md-11" style="color: darkred;">
@@ -95,7 +95,7 @@
             <form>
                 <div class="nativeDatePicker">
                     <label for="bday">Enter Pick up date :</label>
-                    <input type="date" id="bday" name="bday">
+                    <input type="date" class="pdate" id="bday" name="bday">
                     <!--<span class="validity"></span>-->
                 </div>
                 <div class="fallbackDatePicker"></div>
@@ -103,7 +103,7 @@
             <form>
                 <div class="nativeDatePicker">
                     <label for="bday">Enter deliver date:</label>
-                    <input type="date" id="bday" name="bday">
+                    <input type="date" class="ddate" id="bday" name="bday">
                     <!--<span class="validity"></span>-->
                 </div>
                 <div class="fallbackDatePicker"></div>
@@ -112,7 +112,7 @@
         </div>
 
 
-        <input type="button" name="next" id="myNext" class="next action-button col-md-3" style="float: inherit"
+        <input type="button" name="next" id="rent" class="next action-button col-md-3" style="float: inherit"
                value="Next"/>
     </fieldset>
     <fieldset>
