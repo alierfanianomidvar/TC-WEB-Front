@@ -21,7 +21,7 @@ $("#myLogin").click(function () {
             }else{
                 token = j.token;
                 $.cookie("token",token);
-                if (j.object.role=="admin") {
+                if (j.object.role=="super_admin") {
                     window.location.replace("../html/Adminpage.html");
                 }
                 else {

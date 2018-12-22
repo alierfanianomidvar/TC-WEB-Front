@@ -109,4 +109,21 @@ $("#mySubmit").click(function () {
     })
 });
 
+$("#homeButt").click(function () {
+    window.location.replace("../html/Adminpage.html")
+});
+
+$("#users").click(function () {
+    window.location.replace("../html/AdminUserList.html")
+});
+
+$("#addCar").click(function () {
+    window.location.replace("../html/AdminAddCar.html")
+});
+
+$("#logout").click(function () {
+    $.cookie("token",null);
+    window.location.replace("../html/Login.html")
+});
+
 

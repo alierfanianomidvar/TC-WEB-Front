@@ -35,7 +35,7 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
 
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
@@ -54,8 +54,8 @@
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!--<link rel="stylesheet" type="text/css" href="../index.css">-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <STYLE>
         @font-face {
             font-family: "MyFont";
@@ -101,23 +101,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll myInfo" href="" style="color: darkred">TehranCar</a>
+            <a class="navbar-brand page-scroll myInfo" id="homeButt" style="color: darkred">TehranCar</a>
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a class="page-scroll" href="AdminUserList.html"><span class="glyphicon glyphicon-user "
+                    <a class="page-scroll" id="users"><span class="glyphicon glyphicon-user "
                                                                            style="padding-right: 3px"></span>List of
                         User</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#page1"><span class="fas fa-car-side"
+                    <a class="page-scroll" ><span class="fas fa-car-side"
                                                                style="padding-right: 3px"></span>List of car</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="" class="page-scroll" style="padding-right: 25px!important;"><span
+                <li><a id="logout" class="page-scroll" style="padding-right: 25px!important;"><span
                         class="glyphicon glyphicon-log-out" style="padding-right: 3px"></span>Log out</a></li>
             </ul>
         </div>
@@ -177,23 +177,24 @@
 <SCRIPT>
     // for upload photo
     
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-                $('#imagePreview').hide();
-                $('#imagePreview').fadeIn(650);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#imageUpload").change(function() {
-        readURL(this);
-    });
+    // function readURL(input) {
+    //     if (input.files && input.files[0]) {
+    //         var reader = new FileReader();
+    //         reader.onload = function(e) {
+    //             $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+    //             $('#imagePreview').hide();
+    //             $('#imagePreview').fadeIn(650);
+    //         }
+    //         reader.readAsDataURL(input.files[0]);
+    //     }
+    // }
+    // $("#imageUpload").change(function() {
+    //     readURL(this);
+    // });
 
 </SCRIPT>
 <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+<script src="../js/vendor/jquery.cookie.js"></script>
 <script src="../js/const.js"></script>
 <script src="../js/Admin.js"></script>
 </body>
