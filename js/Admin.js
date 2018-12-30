@@ -97,8 +97,9 @@ $("#mySubmit").click(function () {
         automateBool = false
     }
     var price = $("input[name=price]").val();
+    var id = $.cookie("id");
     var car = {automate: automateBool, color: color, description: description, factory: factory, kilometer: kilometer,
-        name: name, price: price, year: year};
+        name: name, price: price, user_id: id, year: year};
     $.ajax({
         type: "POST",
         data :JSON.stringify(car),
@@ -110,7 +111,6 @@ $("#mySubmit").click(function () {
             xhr.setRequestHeader('Access-Token', token);
         },
         success: function(j){
-            console.log(j.status)
             window.location.replace("../html/Adminpage.html")
         }
     })
@@ -132,5 +132,10 @@ $("#logout").click(function () {
     $.cookie("token",null);
     window.location.replace("../html/Login.html")
 });
+
+$("#cars").click(function () {
+    window.location.replace("../html/ListOfAdminCar.html")
+});
+
 
 
