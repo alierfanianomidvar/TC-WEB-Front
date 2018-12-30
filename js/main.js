@@ -6,6 +6,7 @@ $("#myLogin").click(function () {
     var person = {username : username , password : password};
 
     var token;
+    var id;
 
     $.ajax({
         type: "POST",
@@ -20,7 +21,9 @@ $("#myLogin").click(function () {
                 window.location.replace("../html/Login.html");
             }else{
                 token = j.token;
+                id = j.object.id;
                 $.cookie("token",token);
+                $.cookie("id",id);
                 if (j.object.role=="super_admin") {
                     window.location.replace("../html/Adminpage.html");
                 }
