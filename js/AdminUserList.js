@@ -22,6 +22,7 @@ $.ajax({
 
             var btnacc = document.createElement('button');
             btnacc.setAttribute('class', 'accordion');
+            // btnacc.setAttribute("id",item.id);
             btnacc.innerHTML = item.lastName;//kia
 
 
@@ -90,12 +91,13 @@ $.ajax({
 
             var hr6 = document.createElement('hr');
             var deletebtn = document.createElement('button');
+            deletebtn.setAttribute('id',item.id);
             deletebtn.setAttribute('class','btn btn-danger');
+            deletebtn.setAttribute('name','delete');
             var dbtnspan = document.createElement('span');
             dbtnspan.setAttribute('class', 'glyphicon glyphicon-remove');
             dbtnspan.setAttribute('style','padding-right: 3px');
             dbtnspan.setAttribute('name','delete');
-            dbtnspan.setAttribute('id',item.id); //kia
 
 
             deletebtn.appendChild(dbtnspan);//<p><span>
@@ -123,7 +125,20 @@ $.ajax({
 });
 
 $("button[name=delete]").click(function () {
-    //TODO
+    var id = $(this).attr("id");
+    $.ajax({
+        type: "DELETE",
+        url: ip + "/api/v1/users/" + id,
+        contentType: "application/json",
+        dataType: "json",
+        async: false,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Access-Token', token);
+        },
+        success: function (j) {
+            window.location.replace("../html/AdminUserList.html");
+        }
+    });
 });
 
 var acc = document.getElementsByClassName("accordion");
