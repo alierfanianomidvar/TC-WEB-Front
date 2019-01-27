@@ -24,7 +24,7 @@ $.ajax({
             var box = document.createElement('div');
             box.setAttribute('class', 'w3-half w3-margin-bottom col-sm-4');
             var img = document.createElement('img');
-            img.src = "../img/6572131-tehran-wallpapers.jpg";
+            img.src = ip + "/api/v1/images/" + item.image_url;
             img.setAttribute('style' , 'width:100%')
             var info = document.createElement('div');
             info.setAttribute('class', 'w3-container w3-white');

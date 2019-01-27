@@ -41,13 +41,13 @@
         <div class="container">
             <div class="upload-img">
                 <div class="img-edit">
-                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg , .tiff"/>
+                    <input type='file' id="imageUpload" onchange="readURL(this);" accept=".png, .jpg, .jpeg , .tiff" />
                     <label for="imageUpload" class=" "><span
-                            class="glyphicon glyphicon-camera"
-                            style="padding-right: 3px ; margin-top: 8px ; margin-left: 1px"></span></label>
+                            class="glyphicon glyphicon-camera" style="padding-right: 3px ; margin-top: 8px ; margin-left: 1px"></span></label>
                 </div>
                 <div class="img-preview">
                     <div id="imagePreview" style="background-image: url(../img/upload.png);">
+                        <img id="myImg" src="" alt="">
                     </div>
                 </div>
             </div>

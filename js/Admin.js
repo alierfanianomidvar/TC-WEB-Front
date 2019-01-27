@@ -80,7 +80,6 @@
 // });
 
 var token = $.cookie("token");
-
 $("#mySubmit").click(function () {
 
     var name = $("input[name=car-name]").val();
@@ -100,6 +99,8 @@ $("#mySubmit").click(function () {
     var id = $.cookie("id");
     var car = {automate: automateBool, color: color, description: description, factory: factory, kilometer: kilometer,
         name: name, price: price, user_id: id, year: year};
+
+
     $.ajax({
         type: "POST",
         data :JSON.stringify(car),
@@ -111,9 +112,31 @@ $("#mySubmit").click(function () {
             xhr.setRequestHeader('Access-Token', token);
         },
         success: function(j){
-            window.location.replace("../html/Adminpage.html")
+            $.cookie("thisCarId",j.object.id);
+
+            var data = new FormData();
+            // $.each($('#imageUpload')[0].files, function(i, file) {
+            //     data.append('file-'+i, file);
+            // });
+            data.append( 'file', $( '#imageUpload' )[0].files[0] );
+            $.ajax({
+                type: "POST",
+                data :data,
+                url: ip + "/api/v1/images/" + $.cookie("thisCarId"),
+                contentType: false,
+                processData: false,
+                async: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Access-Token', token);
+                },
+                success: function(j){
+                    window.location.replace("../html/Adminpage.html")
+                    console.log("success")
+                }
+            })
         }
-    })
+    });
+
 });
 
 var carId;
@@ -131,6 +154,19 @@ $.ajax({
     success: function (j) {
         var obj = j.object;
         $(obj).each(function(i, item){
+            // $.ajax({
+            //     url: ip + "/api/v1/images/" + item.image_url,
+            //     contentType: "application/json",
+            //     dataType: "json",
+            //     async: false,
+            //     beforeSend: function (xhr) {
+            //         xhr.setRequestHeader('Access-Token', token);
+            //     },
+            //     success: function (j) {
+            //
+            //     }
+            // });
+
             /*$(".but" + (i+1)).attr("id","rent" + item.id);
             $(".name" + (i+1)).append(item.name)
             $(".company" + (i+1)).append(item.factory)
@@ -141,7 +177,7 @@ $.ajax({
             var box = document.createElement('div');
             box.setAttribute('class', 'w3-half w3-margin-bottom col-sm-4');
             var img = document.createElement('img');
-            img.src = "../img/6572131-tehran-wallpapers.jpg";
+            img.src = ip + "/api/v1/images/" + item.image_url;
             img.setAttribute('style' , 'width:100%')
             var info = document.createElement('div');
             info.setAttribute('class', 'w3-container w3-white');
@@ -175,6 +211,18 @@ $("button[name=rent]").click(function () {
     carId = $.cookie("carId",myId);
     window.location.replace("../html/AdminCarProfile.html")
 });
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            $("#imagePreview").css("background-image","url(" +  e.target.result + ")")
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 
 $("#homeButt").click(function () {

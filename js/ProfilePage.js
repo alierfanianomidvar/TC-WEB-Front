@@ -108,6 +108,7 @@ $.ajax({
         }
         $("#myColor").append(obj.color);
         $("#myDescription").append(obj.description);
+        $("#myImage").attr("src","http://172.17.3.62:5000/api/v1/images/" + "photo.jpg")
     }
 });
 

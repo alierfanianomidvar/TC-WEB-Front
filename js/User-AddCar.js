@@ -28,7 +28,28 @@ $("#mySubmit").click(function () {
             xhr.setRequestHeader('Access-Token', token);
         },
         success: function(j){
-            window.location.replace("../html/User-profilepage.html")
+            $.cookie("thisCarId",j.object.id);
+
+            var data = new FormData();
+            // $.each($('#imageUpload')[0].files, function(i, file) {
+            //     data.append('file-'+i, file);
+            // });
+            data.append( 'file', $( '#imageUpload' )[0].files[0] );
+            $.ajax({
+                type: "POST",
+                data :data,
+                url: ip + "/api/v1/images/" + $.cookie("thisCarId"),
+                contentType: false,
+                processData: false,
+                async: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Access-Token', token);
+                },
+                success: function(j){
+                    window.location.replace("../html/User-profilepage.html")
+                    console.log("success")
+                }
+            })
         }
-    })
+    });
 });
