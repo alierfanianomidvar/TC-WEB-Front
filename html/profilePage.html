@@ -110,8 +110,52 @@
             </form>
             <hr class="col-md-11" style="color: darkred !important;">
         </div>
+        <div class="col-sm-12">
+            <div class="well">
 
-
+        <div id="accordion" class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a style="font-weight: bolder" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Choose driver<span class="glyphicon glyphicon-arrow-down" style="color: darkred"></span></a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse">
+                    <hr>
+                    <div class="row " style="padding-right: 5px; padding-left: 5px;">
+                        <div class="col-sm-4">
+                            <div class="well" style="height:179px">
+                                <p>John</p>
+                                <img src="bird.jpg" class="img-circle" height="85" width="60" alt="Avatar">
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="well">
+                                <p>name:</p>
+                            </div>
+                            <hr>
+                            <div class="well">
+                                <p>family name:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-right: 5px; padding-left: 5px;">
+                        <div class="col-sm-12">
+                            <hr>
+                            <div class="well">
+                                <p>Phone number:</p>
+                            </div>
+                            <hr>
+                            <div class="well">
+                                <p>ID:</p>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div></div>
         <input type="button" name="next" id="rent" class="next action-button col-md-3" style="float: inherit"
                value="Next"/>
     </fieldset>
@@ -122,6 +166,9 @@
 
 
 <script>
+
+
+
     $(document).ready(function () {
         $("#btn1").click(function () {
             $("#menu2").text("Ali");

@@ -136,3 +136,4 @@ $("#rent").click(function () {
         }
     })
 });
+
