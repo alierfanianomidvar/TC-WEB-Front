@@ -217,3 +217,7 @@ input:valid + span:after {
     content: '✓';
     padding-left: 5px;
 }
+.label1 {
+    margin-bottom: 10px;
+    display: block;
+}
